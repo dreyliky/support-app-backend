@@ -8,6 +8,10 @@ export class RoomService {
         private readonly roomState: RoomState
     ) {}
 
+    public getAll(): Room[] {
+        return this.roomState.getAll();
+    }
+
     public create(room: Room): void {
         this.roomState.create(room);
     }

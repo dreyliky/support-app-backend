@@ -5,6 +5,10 @@ import { Room } from '../models';
 export class RoomState {
     private readonly data: Room[] = [];
 
+    public getAll(): Room[] {
+        return [...this.data];
+    }
+
     public create(room: Room): void {
         this.data.push(room);
     }
