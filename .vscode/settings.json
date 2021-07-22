@@ -7,5 +7,7 @@
         "gitlens.codeLens.scopes": [
             "document"
         ]
-    }
+    },
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single"
 }
