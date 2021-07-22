@@ -13,6 +13,7 @@
     "incremental": true,
     "skipLibCheck": true,
     "paths": {
+      "@Features": ["src/features"],
       "@Features/*": ["src/features/*"]
     }
   }

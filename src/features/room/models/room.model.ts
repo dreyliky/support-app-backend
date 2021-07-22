@@ -1,8 +1,8 @@
-import { Message } from '../../message/models';
-import { User } from '../../user/models';
+import { Message } from '../../message';
+import { User } from '../../user';
 
 export class Room {
-    client: User;
-    support: User;
-    messages: Message[];
+    public client: User;
+    public support: User | null = null;
+    public messages: Message[];
 }

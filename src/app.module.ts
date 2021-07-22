@@ -1,21 +1,17 @@
 import { Module } from '@nestjs/common';
+import { FeaturesModule } from '@Features';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TelegramBotListenerService } from '@Features/telegram-bot';
 
 @Module({
-	imports: [],
+	imports: [
+		FeaturesModule
+	],
 	controllers: [
 		AppController
 	],
 	providers: [
-		AppService,
-		TelegramBotListenerService
+		AppService
 	]
 })
-export class AppModule {
-	constructor(
-		// Create instances of services
-		public readonly telegramBotListenerService: TelegramBotListenerService
-	) {}
-}
+export class AppModule {}
