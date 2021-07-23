@@ -11,7 +11,7 @@ export class RoomRepository {
     }
 
     public getAll(): Room[] {
-        return this.storageService.get(StorageKeyEnum.rooms);
+        return this.storageService.get(StorageKeyEnum.Rooms);
     }
 
     public create(room: Room): void {
@@ -19,12 +19,12 @@ export class RoomRepository {
 
         rooms.push(room);
 
-        this.storageService.set(StorageKeyEnum.rooms, rooms);
+        this.storageService.set(StorageKeyEnum.Rooms, rooms);
     }
 
     private initDefaultValueIfNeeded(): void {
-        if (!this.storageService.has(StorageKeyEnum.rooms)) {
-            this.storageService.set(StorageKeyEnum.rooms, []);
+        if (!this.storageService.has(StorageKeyEnum.Rooms)) {
+            this.storageService.set(StorageKeyEnum.Rooms, []);
         }
     }
 }

@@ -1,3 +1,4 @@
 export enum StorageKeyEnum {
-    rooms = 'rooms'
+    Rooms = 'rooms',
+    Supports = 'supports'
 }
