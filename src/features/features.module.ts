@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { SharedModule } from '@app';
-import { RoomController, RoomService, RoomState } from './room';
+import { RoomController, RoomService, RoomRepository } from './room';
 import { TelegramBotListenerService } from './telegram-bot';
 
 @Module({
@@ -12,7 +12,7 @@ import { TelegramBotListenerService } from './telegram-bot';
 	],
 	providers: [
         RoomService,
-        RoomState,
+        RoomRepository,
 		TelegramBotListenerService
 	]
 })

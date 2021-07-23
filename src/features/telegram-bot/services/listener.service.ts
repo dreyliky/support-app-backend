@@ -17,7 +17,7 @@ export class TelegramBotListenerService {
     }
 
     private initBotInstance(): void {
-        const token = this.configService.get(EnvConfigKeyEnum.TELEGRAM_BOT_TOKEN);
+        const token = this.configService.get(EnvConfigKeyEnum.TelegramBotToken);
         this.botInstance = new TelegramBot(token, { polling: true });
     }
 

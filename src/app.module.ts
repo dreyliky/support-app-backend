@@ -7,9 +7,6 @@ import { SharedModule } from './shared.module';
 	imports: [
 		SharedModule,
 		FeaturesModule
-	],
-	providers: [
-		ConfigService
 	]
 })
 export class AppModule {}

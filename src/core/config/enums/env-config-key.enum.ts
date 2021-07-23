@@ -1,3 +1,3 @@
 export enum EnvConfigKeyEnum {
-    TELEGRAM_BOT_TOKEN = 'TELEGRAM_BOT_TOKEN'
+    TelegramBotToken = 'TELEGRAM_BOT_TOKEN'
 }
