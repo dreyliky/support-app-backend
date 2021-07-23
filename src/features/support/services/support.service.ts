@@ -1,4 +1,7 @@
 import { Injectable } from '@nestjs/common';
+import { SupportDbInfoAdapter } from '../adapters';
+import { SupportAdapter } from '../adapters/support.adapter';
+import { SupportCreationInfo, SupportDbInfo } from '../interfaces';
 import { Support } from '../models';
 import { SupportRepository } from '../repositories';
 
@@ -8,11 +11,19 @@ export class SupportService {
         private readonly supportRepository: SupportRepository
     ) {}
 
-    public getById(id: number): Support {
+    public getAll(): SupportDbInfo[] {
+        return this.supportRepository.getAll();
+    }
+
+    public getById(id: string): SupportDbInfo {
         return this.supportRepository.getById(id);
     }
 
-    public create(): Support {
-        return new Support();
+    public create(creationInfo: SupportCreationInfo): Support {
+        const dbInfo = SupportDbInfoAdapter.adaptFromCreationInfo(creationInfo);
+
+        this.supportRepository.create(dbInfo);
+
+        return SupportAdapter.adaptFromDbInfo(dbInfo);
     }
 }

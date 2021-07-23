@@ -1,5 +1,5 @@
 export interface BaseUserInfo {
-    id: number;
+    id: string;
     name: string;
     login: string;
 }
