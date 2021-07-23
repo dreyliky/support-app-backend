@@ -1,18 +1,24 @@
+import { EnvConfigKeyEnum } from '@core';
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import * as TelegramBot from 'node-telegram-bot-api';
 import { RoomService } from '../../room';
 
 @Injectable()
 export class TelegramBotListenerService {
-    private readonly botToken = '1939938120:AAFhFp1fTUdKtF5b4xGwHh6Yvw3zv2MkJOA';
-    private readonly botInstance: TelegramBot;
+    private botInstance: TelegramBot;
 
     constructor(
+        private readonly configService: ConfigService,
         private readonly roomService: RoomService
     ) {
-        this.botInstance = new TelegramBot(this.botToken, { polling: true });
-
+        this.initBotInstance();
         this.initUserMessagesObserver();
+    }
+
+    private initBotInstance(): void {
+        const token = this.configService.get(EnvConfigKeyEnum.TELEGRAM_BOT_TOKEN);
+        this.botInstance = new TelegramBot(token, { polling: true });
     }
 
     private initUserMessagesObserver(): void {

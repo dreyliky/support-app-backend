@@ -13,8 +13,11 @@
     "incremental": true,
     "skipLibCheck": true,
     "paths": {
+      "@core": ["src/core"],
+      "@core/*": ["src/core/*"],
       "@features": ["src/features"],
-      "@features/*": ["src/features/*"]
+      "@features/*": ["src/features/*"],
+      "@app": ["src"]
     }
   }
 }
