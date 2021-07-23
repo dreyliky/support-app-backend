@@ -1,9 +1,12 @@
-<<<<<<< HEAD
-# support-app-backend
-=======
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
+
+
+  ## To run this project, please create `.env` file in root folder and put inside next content:
+  ```bash
+  TELEGRAM_BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
+  ```
 
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
@@ -74,4 +77,3 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
->>>>>>> c5988a1ab15421a45eedf5fcc4782cdfbb279196
