@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { SharedModule } from '@app';
+import { AuthController } from './auth';
+import { SupportController } from './support';
 import { RoomController, RoomService, RoomRepository } from './room';
 import { TelegramBotListenerService } from './telegram-bot';
 
@@ -8,6 +10,8 @@ import { TelegramBotListenerService } from './telegram-bot';
 		SharedModule
 	],
 	controllers: [
+		AuthController,
+		SupportController,
 		RoomController
 	],
 	providers: [
