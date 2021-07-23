@@ -1,5 +1,4 @@
-import { Support, SupportService } from '@features/support';
-import { SupportCreationInfo } from '@features/support/interfaces';
+import { Support, SupportService, SupportCreationInfo } from '@features/support';
 import { Body, Controller, Post } from '@nestjs/common';
 
 @Controller('auth')

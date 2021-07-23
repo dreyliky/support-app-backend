@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { SupportDbInfoAdapter } from '../adapters';
-import { SupportAdapter } from '../adapters/support.adapter';
+import { SupportDbInfoAdapter, SupportAdapter } from '../adapters';
 import { SupportCreationInfo, SupportDbInfo } from '../interfaces';
 import { Support } from '../models';
 import { SupportRepository } from '../repositories';
