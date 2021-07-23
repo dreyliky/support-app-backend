@@ -6,7 +6,6 @@ export abstract class UserAdapter {
         const user = new User();
         user.id = telegramMessage.from.id;
         user.name = telegramMessage.from.username;
-        user.photoLink = null;
 
         return user;
     }
