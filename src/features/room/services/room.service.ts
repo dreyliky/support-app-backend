@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import * as TelegramBot from 'node-telegram-bot-api';
 import { RoomBuilder } from '../builders';
 import { Room } from '../models';
-import { RoomRepository } from '../repository';
+import { RoomRepository } from '../repositories';
 
 @Injectable()
 export class RoomService {

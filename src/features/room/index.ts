@@ -1,5 +1,5 @@
 export * from './builders';
 export * from './models';
-export * from './repository';
+export * from './repositories';
 export * from './controllers';
 export * from './services';
