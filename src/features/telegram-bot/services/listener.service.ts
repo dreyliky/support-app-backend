@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as TelegramBot from 'node-telegram-bot-api';
-import { RoomBuilder, RoomService } from '../../room';
+import { RoomService } from '../../room';
 
 @Injectable()
 export class TelegramBotListenerService {
@@ -12,17 +12,12 @@ export class TelegramBotListenerService {
     ) {
         this.botInstance = new TelegramBot(this.botToken, { polling: true });
 
-        this.initUserMessageObserver();
+        this.initUserMessagesObserver();
     }
 
-    private initUserMessageObserver(): void {
+    private initUserMessagesObserver(): void {
         this.botInstance.on('message', (telegramMessage) => {
-            const room = RoomBuilder.build(telegramMessage);
-
-            console.log(telegramMessage);
-            console.log(room);
-
-            this.roomService.create(room);
+            this.roomService.create(telegramMessage);
         });
     }
 }
